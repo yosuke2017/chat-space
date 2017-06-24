@@ -3,13 +3,13 @@
 |Column|Type|Option|
 |:-|:-:|:-|
 |name|string|index: true, null: false,unique: true|
-|mail|string|null:false|  
+|mail|string|null:false| 
 
 ### __Association__
 
 * has_many :groups,through: members
 * has_many :messages
-* has_many :members    
+* has_many :members 
 
 
 ## __messages table__
@@ -18,12 +18,12 @@
 |body|text|null:false|
 |image|string|null:true|
 |group_id|integer|null:false|
-|user_id|integer|null:false|  
+|user_id|integer|null:false| 
 
 ## __Association__
 
 * belongs_to :group
-* belongs_to :user    
+* belongs_to :user 
 
 
 ## __groups table__
@@ -31,18 +31,18 @@
 |:-|:-:|:-|
 |key|varchar|null:true|
 |detail|text|null:true|
-|member_id|integer|null:false|  
+|member_id|integer|null:false| 
 
 ## __Association__
 
 * has_many :users, through: members
-* belongs_to :member    
+* belongs_to :member 
 
 
 ## __members table__
 |Column|Type|Option|
 |:-|:-:|:-|
-|user_id|integer|null:false|  
+|user_id|integer|null:false| 
 
 ## _Association__
 
