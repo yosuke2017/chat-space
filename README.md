@@ -50,7 +50,7 @@
 <br />
 
 * has_many :users, through: members
-* has_many :
+* has_many :messages
 
 <br />
 <br />
