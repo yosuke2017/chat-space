@@ -1,28 +1,50 @@
-== README
+# __DB設計__
+## __users table__
+|Column|Type|Option|
+|:-|:-:|:-|
+|name|string|index: true, null: false,unique: true|
+|mail|string|null:false|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### __Association__
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* has_many :groups,through: members
+* has_many :messages
+* has_many :members
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## __messages table__
+|Column|Type|Option|
+|:-|:-:|:-|
+|body|text|null:false|
+|image|string|null:true|
+|group_id|integer|null:false|
+|user_id|integer|null:false|
+
+## __Association__
+
+* belongs_to :group
+* belongs_to :user
+
+
+## __groups table__
+|Column|Type|Option|
+|:-|:-:|:-|
+|key|varchar|null:true|
+|detail|text|null:true|
+|member_id|integer|null:false|
+
+## __Association__
+
+* has_many :users, through: members
+* belongs_to :member
+
+
+## __members table__
+|Column|Type|Option|
+|:-|:-:|:-|
+|user_id|integer|null:false|
+
+## _Association__
+
+* belongs_to :user
+* has_many :groups
