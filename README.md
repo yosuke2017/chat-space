@@ -21,10 +21,10 @@
 ## __messages table__
 |Column|Type|Option|
 |:-|:-:|:-|
-|body|text|null:false|
-|image|string|null:true|
-|group_id|integer|null:false|
-|user_id|integer|null:false| 
+|body|text|
+|image|string|
+|group_id|integer|null:false, foreign_key: true|
+|user_id|integer|null:false, foreign_key: true| 
 
 <br />
 
@@ -41,9 +41,7 @@
 ## __groups table__
 |Column|Type|Option|
 |:-|:-:|:-|
-|key|varchar|null:true|
-|detail|text|null:true|
-|member_id|integer|null:false| 
+|name|string|null:false, unique:true|
 
 <br />
 
@@ -52,7 +50,6 @@
 <br />
 
 * has_many :users, through: members
-* belongs_to :member 
 
 <br />
 <br />
@@ -60,7 +57,7 @@
 ## __members table__
 |Column|Type|Option|
 |:-|:-:|:-|
-|user_id|integer|null:false| 
+|user_id|integer|null:false,foreign_key| 
 
 <br />
 
@@ -69,4 +66,4 @@
 <br />
 
 * belongs_to :user
-* has_many :groups
+* belongs_to :group
