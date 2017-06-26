@@ -1,6 +1,7 @@
 !!!
 %haml
   %head
+    %link{:rel => "stylesheet", :href => "/Users/mukaiyosuke/desktop/font-awesome-4.7.0/css/font-awesome.min.css"}
   %body
     .content
       .left-content
@@ -17,4 +18,11 @@
             %a{:href => "" , :class => "square_btn"}EDIT
           %p Group名
         .under-space2
+        .send-space
+          %p{:class => "message_form"}
+            %form{:method => "post", :label => "image"}
+              %input{:type => "text" , :label => "image" , :size => "120" , :class => "text_area"}
+              %i.fa.fa-image.o.fa-lg
+              %input{:type => "submit", :value => "SEND", :label => "image", :class => "square_btn"}
+
 
