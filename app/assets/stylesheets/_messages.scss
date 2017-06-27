@@ -1,8 +1,8 @@
 
 .content{
-  .left-content{
+  &__left{
     float:left;
-  	.top-space{
+  	&__top{
     	background-color: #00008B;
     	width: 300px;
     	height: 90px;
@@ -20,7 +20,7 @@
         font-weight:bold;
         }
   	}
-  	.under-space{
+  	&__under{
   		background-color: #2f3e51;
   		width: 300px;
   	 	height: 890px;
@@ -38,13 +38,13 @@
       }
   	}
   }
-  .right-content{
+  &__right{
     float: right;
   	background-color: #F8F8FF;
     width: calc(100% - 300px);
-    .top-space2{
+    &__top{
       height: 90px;
-      .top-left-content {
+      &--left {
         float: left;
         padding:22px 0 0 40px;
         // line-height: 90px;
@@ -58,7 +58,7 @@
           color: #999999;
         }
       }
-      .editbtn{
+      &--edit-btn{
         float:right;
         padding:25px 22px 0 0;
         .square_btn{
@@ -77,10 +77,10 @@
         }
       }
     }
-    .under-space2{
+    &__under{
       background-color:#DCDCDC;
       height: 790px;
-      .under-content{
+      &__message{
         padding: 46px 0 10px 40px;
         span{
          font-size: 16px;
@@ -92,74 +92,40 @@
          color: #434A54;
         }
       }
-    }
-    .send-space{
-      height:100px;
-      background-color:#A9A9A9;
+      &--send-btn{
+        background-color:#A9A9A9;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-bottom: 16px;
         .message_form{
-          .form{
-            input[type="file"] {
-             font-family: FontAwesome;
-             }
-            input[type="submit"]{
-              display: inline-block;
-              padding: 0.5em 1em;
-              text-decoration: none;
-              color: #67c5ff;
-              border: dashed 1px #67c5ff;
-              background: #f2fcff;
-              border-radius: 3px;
-              transition: .4s;
-             }
-
-            input[type="submit"]:hover {
-              background: #cbedff;
-              color: #FFF;
-            }
-           }
+          width: calc(100% - 200px);
+          height: 60px;
+          padding-left: 20px;
+          padding-right: 40px;
+          border-left: solid #A9A9A9 50p;
+        }
+        .fa-image{
+          position: absolute;
+          padding: 20px 0px 0px 10px;
+          position: relative;
+          right: 40px;
+        }
+        .square_btn{
+          display: inline-block;
+          padding: 0.5em 1em;
+          text-decoration: none;
+          color: #67c5ff;
+          border: dashed 1px #67c5ff;
+          background: #f2fcff;
+          border-radius: 3px;
+          transition: .4s;
+          &:hover {
+            background: #cbedff;
+            color: #FFF;
           }
         }
      }
-}
-
-.image{
-  position: absolute;
-  padding: 20px 0px 0px 20px;
-}
-
-.text_field{
-  width: calc(100% - 200px);
-  height: 60px;
-  padding-left: 20px;
-  padding-right: 40px;
-}
-
-.fa-image{
-  position: relative;
-  right: 40px;
-}
-
-.message_form{
-  padding-top: 20px;
-  padding-left: 20px;
-}
-
-.send-space{
-  border-left: solid #A9A9A9 50px;
-}
-
-.square_btn{
-  display: inline-block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  color: #67c5ff;
-  border: dashed 1px #67c5ff;
-  background: #f2fcff;
-  border-radius: 3px;
-  transition: .4s;
-  &:hover {
-    background: #cbedff;
-    color: #FFF;
+    }
   }
 }
 

@@ -1,41 +1,33 @@
 !!!
 %haml
   %head
-    %link{:rel => "stylesheet", :href => "./font-awesome-4.7.0/css/font-awesome.min.css"}
   %body
     .content
-      .left-content
-        .top-space
+      .content__left
+        .content__left__top
           = link_to do
             %i.fa.fa-gear.fa-lg
           = link_to do
             %i.fa.fa-edit.fa-lg
           %p ユーザ名
-        .under-space
+        .content__left__under
           %p Group名
           %span メッセージ
-      .right-content
-        .top-space2
-          .top-left-content
+      .content__right
+        .content__right__top
+          .content__right__top--left
             %p Group名
             %pre Members: seo tanaka
-          .editbtn
+          .content__right__top--edit-btn
             %a{:href => "" , :class => "square_btn"}EDIT
-        .under-space2
-          .under-content
+        .content__right__under
+          .content__right__under__message
             %span seo　timestamp
             %p こんにちわ
-        .send-space
-          %p{:class => "message_form"}
-            = form_for (@messages) do |f|
-              = f.text_field :body, placeholder: "type a message", class: "text_field"
-              = f.label :image do
-                %i.fa.fa-image
-              = f.submit value: "SEND" , class: "square_btn"
-
-            / %form{:method => "post", :label => "image"}
-            /   %input{:type => "text" , :label => "image" , :size => "120" , :class => "text_area"}
-            /   %i.fa.fa-image.o.fa-lg
-            /   %input{:type => "submit", :value => "SEND", :label => "image", :class => "square_btn"}
-
+        .content__right__under--send-btn
+          = form_for (@messages) do |f|
+            = f.text_field :body, placeholder: "type a message", class: "message_form"
+            = f.label :image do
+              %i.fa.fa-image
+            = f.submit value: "SEND" , class: "square_btn"
 
