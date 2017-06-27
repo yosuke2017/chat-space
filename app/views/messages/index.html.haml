@@ -28,7 +28,7 @@
         .send-space
           %p{:class => "message_form"}
             = form_for (@messages) do |f|
-              = f.text_field :body, placeholder: "type a message", size: "130" ,class: "text_field"
+              = f.text_field :body, placeholder: "type a message", class: "text_field"
               = f.label :image do
                 %i.fa.fa-image
               = f.submit value: "SEND" , class: "square_btn"

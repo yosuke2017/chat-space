@@ -128,9 +128,10 @@
 }
 
 .text_field{
+  width: calc(100% - 200px);
   height: 60px;
   padding-left: 20px;
-
+  padding-right: 40px;
 }
 
 .fa-image{
@@ -156,11 +157,10 @@
   background: #f2fcff;
   border-radius: 3px;
   transition: .4s;
-}
-
-.square_btn:hover {
-  background: #cbedff;
-  color: #FFF;
+  &:hover {
+    background: #cbedff;
+    color: #FFF;
+  }
 }
 
 
