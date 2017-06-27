@@ -27,9 +27,7 @@
       p{
         color:#FFFFFF;
         font-size:15px;
-        padding-bottom:5px;
-        padding-top:20px;
-        padding-left:20px;
+        padding: 20px 0 5px 20px;
       }
       span{
        color:#FFFFFF;
@@ -47,7 +45,6 @@
       &--left {
         float: left;
         padding:22px 0 0 40px;
-        // line-height: 90px;
         p {
           font-weight:bold;
           font-size: 20px;
@@ -94,9 +91,7 @@
       }
       &--send-btn{
         background-color:#A9A9A9;
-        padding-top: 20px;
-        padding-left: 20px;
-        padding-bottom: 16px;
+        padding: 20px 0 16px 20px;
         .message_form{
           width: calc(100% - 200px);
           height: 60px;
