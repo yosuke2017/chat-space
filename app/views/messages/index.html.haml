@@ -1,7 +1,7 @@
 !!!
 %haml
   %head
-    %link{:rel => "stylesheet", :href => "/Users/mukaiyosuke/desktop/font-awesome-4.7.0/css/font-awesome.min.css"}
+    %link{:rel => "stylesheet", :href => "./font-awesome-4.7.0/css/font-awesome.min.css"}
   %body
     .content
       .left-content
@@ -20,9 +20,15 @@
         .under-space2
         .send-space
           %p{:class => "message_form"}
-            %form{:method => "post", :label => "image"}
-              %input{:type => "text" , :label => "image" , :size => "120" , :class => "text_area"}
-              %i.fa.fa-image.o.fa-lg
-              %input{:type => "submit", :value => "SEND", :label => "image", :class => "square_btn"}
+            = form_for (@messages) do |f|
+              = f.text_field type: "text", placeholder: "type a message", class: "text_field"
+              = f.label :image do
+                %i.fa.fa-image
+              = f.submit value: "SEND" , class: "square_btn"
+
+            / %form{:method => "post", :label => "image"}
+            /   %input{:type => "text" , :label => "image" , :size => "120" , :class => "text_area"}
+            /   %i.fa.fa-image.o.fa-lg
+            /   %input{:type => "submit", :value => "SEND", :label => "image", :class => "square_btn"}
 
 
