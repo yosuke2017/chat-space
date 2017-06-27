@@ -3,7 +3,7 @@
   .left-content{
     float:left;
   	.top-space{
-    	background-color: #F08080;
+    	background-color: #00008B;
     	width: 300px;
     	height: 90px;
         i{
@@ -21,9 +21,9 @@
         }
   	}
   	.under-space{
-  		background-color: #DDA0DD;
+  		background-color: #4682B4;
   		width: 300px;
-  	 	height: 850px;
+  	 	height: 890px;
   	}
   }
   .right-content{
@@ -63,20 +63,35 @@
     }
     .under-space2{
       background-color:#DCDCDC;
-      height: 750px;
+      height: 790px;
     }
     .send-space{
       height:100px;
       background-color:#A9A9A9;
         .message_form{
           .form{
-           input[type="file"] {
-            font-family: FontAwesome;
+            input[type="file"] {
+             font-family: FontAwesome;
+             }
+            input[type="submit"]{
+              display: inline-block;
+              padding: 0.5em 1em;
+              text-decoration: none;
+              color: #67c5ff;
+              border: dashed 1px #67c5ff;
+              background: #f2fcff;
+              border-radius: 3px;
+              transition: .4s;
+             }
+
+            input[type="submit"]:hover {
+              background: #cbedff;
+              color: #FFF;
             }
+           }
           }
         }
      }
-	}
 }
 
 .image{
@@ -102,6 +117,22 @@
 
 .send-space{
   border-left: solid #A9A9A9 50px;
+}
+
+.square_btn{
+          display: inline-block;
+          padding: 0.5em 1em;
+          text-decoration: none;
+          color: #67c5ff;
+          border: dashed 1px #67c5ff;
+          background: #f2fcff;
+          border-radius: 3px;
+          transition: .4s;
+         }
+
+.square_btn:hover {
+  background: #cbedff;
+  color: #FFF;
 }
 
 
