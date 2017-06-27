@@ -95,8 +95,7 @@
         .message_form{
           width: calc(100% - 200px);
           height: 60px;
-          padding-left: 20px;
-          padding-right: 40px;
+          padding: 0 40px 0 20px;
           border-left: solid #A9A9A9 50p;
         }
         .fa-image{
