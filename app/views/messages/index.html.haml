@@ -10,18 +10,25 @@
             %i.fa.fa-gear.fa-lg
           = link_to do
             %i.fa.fa-edit.fa-lg
-          %p Member名
+          %p ユーザ名
         .under-space
+          %p Group名
+          %span メッセージ
       .right-content
         .top-space2
+          .top-left-content
+            %p Group名
+            %pre Members: seo tanaka
           .editbtn
             %a{:href => "" , :class => "square_btn"}EDIT
-          %p Group名
         .under-space2
+          .under-content
+            %span seo　timestamp
+            %p こんにちわ
         .send-space
           %p{:class => "message_form"}
             = form_for (@messages) do |f|
-              = f.text_field :body, placeholder: "type a message", size: "120" ,class: "text_field"
+              = f.text_field :body, placeholder: "type a message", size: "130" ,class: "text_field"
               = f.label :image do
                 %i.fa.fa-image
               = f.submit value: "SEND" , class: "square_btn"
