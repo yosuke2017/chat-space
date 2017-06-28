@@ -1,24 +1,21 @@
-!!!
-%haml
-  %head
-  %body
-    .content
-      = render partial: "sidebar"
-      .content__right
-        .content__right__top
-          .content__right__top--left
-            %p Group名
-            %pre Members: seo tanaka
-          .content__right__top--edit-btn
-            %a{ href: "", class: "square_btn" }EDIT
-        .content__right__under
-          .content__right__under__message
-            %span seo　timestamp
-            %p こんにちわ
-        .content__right__under--send-btn
-          = form_for (@messages) do |f|
-            = f.text_field :body, placeholder: "type a message", class: "message_form"
-            = f.label :image do
-              %i.fa.fa-image
-            = f.submit value: "SEND" , class: "square_btn"
+%body
+  .content
+    = render partial: "sidebar"
+    .content__right
+      .content__right__top
+        .content__right__top--left
+          %p Group名
+          %pre Members: seo tanaka
+        .content__right__top--edit-btn
+          %a{ href: "", class: "square_btn" }EDIT
+      .content__right__under
+        .content__right__under__message
+          %span seo　timestamp
+          %p こんにちわ
+      .content__right__under--send-btn
+        = form_for (@messages) do |f|
+          = f.text_field :body, placeholder: "type a message", class: "message_form"
+          = f.label :image do
+            %i.fa.fa-image
+          = f.submit value: "SEND" , class: "square_btn"
 
