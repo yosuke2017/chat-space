@@ -1,3 +1,9 @@
+$white: #FFFFFF;
+$btn: #67c5ff;
+$hover: #cbedff;
+$content: #434A54;
+$send: #A9A9A9;
+
 
 .content{
   &__left{
@@ -25,12 +31,12 @@
   		width: 300px;
   	 	height: 890px;
       p{
-        color:#FFFFFF;
+        color: $white;
         font-size:15px;
         padding: 20px 0 5px 20px;
       }
       span{
-       color:#FFFFFF;
+       color: $white;
        font-size:11px;
        padding-left:20px;
       }
@@ -62,13 +68,13 @@
           display: inline-block;
           padding: 0.5em 1em;
           text-decoration: none;
-          color: #67c5ff;
-          border: dashed 1px #67c5ff;
+          color: $btn;
+          border: dashed 1px $btn;
           background: #f2fcff;
           border-radius: 3px;
           transition: .4s;
           &:hover {
-            background: #cbedff;
+            background: $hover;
             color: #FFF;
           }
         }
@@ -82,21 +88,21 @@
         span{
          font-size: 16px;
          font-weight: bold;
-         color: #434A54;
+         color: $content;
         }
         p{
          font-size: 14px;
-         color: #434A54;
+         color: $content;
         }
       }
       &--send-btn{
-        background-color:#A9A9A9;
+        background-color: $send;
         padding: 20px 0 16px 20px;
         .message_form{
           width: calc(100% - 200px);
           height: 60px;
           padding: 0 40px 0 20px;
-          border-left: solid #A9A9A9 50p;
+          border-left: solid $send 50p;
         }
         .fa-image{
           position: absolute;
@@ -108,13 +114,13 @@
           display: inline-block;
           padding: 0.5em 1em;
           text-decoration: none;
-          color: #67c5ff;
-          border: dashed 1px #67c5ff;
+          color: $btn;
+          border: dashed 1px $btn;
           background: #f2fcff;
           border-radius: 3px;
           transition: .4s;
           &:hover {
-            background: #cbedff;
+            background: $hover;
             color: #FFF;
           }
         }
