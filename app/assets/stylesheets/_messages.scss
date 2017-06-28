@@ -1,15 +1,8 @@
-$white: #FFFFFF;
-$btn: #67c5ff;
-$hover: #cbedff;
-$content: #434A54;
-$send: #A9A9A9;
-
-
 .content{
   @include sidebar();
   &__right{
     float: right;
-  	background-color: #F8F8FF;
+    background-color: #F8F8FF;
     width: calc(100% - 300px);
     &__top{
       height: 90px;
@@ -93,5 +86,3 @@ $send: #A9A9A9;
     }
   }
 }
-
-
