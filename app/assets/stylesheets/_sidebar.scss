@@ -1,39 +1,38 @@
-@mixin sidebar() {
-  &__left{
-    float:left;
-    &__top{
-      background-color: #00008B;
-      width: 300px;
-      height: 90px;
-      i{
-        color:white;
-        line-height: 90px;
-        float:right;
-        padding:0 15px 0 0;
-      }
-      p{
-        line-height: 90px;
-        float:left;
-        padding:0 0 0 15px;
-        color:white;
-        font-weight:bold;
-      }
+.content__left{
+  float:left;
+  &__top{
+    background-color: #00008B;
+    width: 300px;
+    height: 90px;
+    i{
+      color:white;
+      line-height: 90px;
+      float:right;
+      padding:0 15px 0 0;
     }
-    &__under{
-      background-color: #2f3e51;
-      width: 300px;
-      height: 890px;
-      p{
-        color: white;
-        font-size:15px;
-        padding: 20px 0 5px 20px;
-      }
-      span{
-        color: white;
-        font-size:11px;
-        padding-left:20px;
-      }
+    p{
+      line-height: 90px;
+      float:left;
+      padding:0 0 0 15px;
+      color:white;
+      font-weight:bold;
+    }
+  }
+  &__under{
+    background-color: #2f3e51;
+    width: 300px;
+    height: 890px;
+    p{
+      color: white;
+      font-size:15px;
+      padding: 20px 0 5px 20px;
+    }
+    span{
+      color: white;
+      font-size:11px;
+      padding-left:20px;
     }
   }
 }
+
 
