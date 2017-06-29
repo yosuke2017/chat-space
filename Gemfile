@@ -51,6 +51,5 @@ group :development do
 
   gem 'erb2haml'
 
-
 end
 

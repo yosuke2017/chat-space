@@ -1,55 +1,54 @@
-.content{
-  &__right{
+.content {
+  &__right {
     float: right;
     background-color: #F8F8FF;
     width: calc(100% - 300px);
-    &__top{
+    &__top {
       height: 90px;
       &--left {
         float: left;
-        padding:22px 0 0 40px;
+        padding: 22px 0 0 40px;
         p {
-          font-weight:bold;
+          font-weight: bold;
           font-size: 20px;
-          color:#333333;
+          color: #333333;
         }
         pre {
           font-size: 12px;
           color: #999999;
         }
       }
-      &--edit-btn{
-        float:right;
-        padding:25px 22px 0 0;
+      &--edit-btn {
+        float: right;
+        padding: 25px 22px 0 0;
         @include square-btn();
       }
     }
-    &__under{
-      background-color:#DCDCDC;
+    &__under {
+      background-color: #DCDCDC;
       height: 790px;
-      &__message{
+      &__message {
         padding: 46px 0 10px 40px;
-        span{
+        span {
          font-size: 16px;
          font-weight: bold;
          color: $content;
         }
-        p{
+        p {
          font-size: 14px;
          color: $content;
         }
       }
-      &--send-btn{
+      &--send-btn {
         background-color: $send;
         padding: 20px 0 16px 20px;
-        .message_form{
+        .message_form {
           width: calc(100% - 200px);
           height: 60px;
           padding: 0 40px 0 20px;
           border-left: solid $send 50p;
         }
-        .fa-image{
-          position: absolute;
+        .fa-image {
           padding: 20px 0px 0px 10px;
           position: relative;
           right: 40px;
@@ -59,3 +58,4 @@
     }
   }
 }
+
