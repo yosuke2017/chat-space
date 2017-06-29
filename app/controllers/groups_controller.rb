@@ -15,5 +15,13 @@ class GroupsController < ApplicationController
   end
 
   def update
+    @group = Group.find(params[:id])
+    @group.update(update_params)
+    redirect_to :index
+  end
+
+  private
+  def update_params
+    params.require(:group).permit(:name)
   end
 end
