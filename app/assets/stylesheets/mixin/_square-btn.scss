@@ -1,0 +1,17 @@
+@mixin square-btn() {
+  .square_btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: $btn;
+    border: dashed 1px $btn;
+    background: #f2fcff;
+    border-radius: 3px;
+    transition: .4s;
+    &:hover {
+      background: $hover;
+      color: #FFF;
+    }
+  }
+}
+
