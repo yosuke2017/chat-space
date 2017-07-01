@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'pry-rails'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
