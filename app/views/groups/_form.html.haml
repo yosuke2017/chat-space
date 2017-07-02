@@ -1,0 +1,25 @@
+= form_for @group do |f|
+  - if @group.errors.any?
+    .chat-group-form__errors
+      %h2 1件のエラーが発生しました。
+      %ul
+        %li エラーです。
+  .chat-group-form__field.clearfix
+    .chat-group-form__field--left
+      = f.label "グループ名", class: "chat-group-form__label"
+    .chat-group-form__field--right
+      = f.text_field :name, class: "chat-group-form__input" ,placeholder: "#{@group.name}"
+  .chat-group-form__field.clearfix
+    .chat-group-form__field--left
+      = f.label "チャットメンバーを追加", class: "chat-group-form__label"
+    .chat-group-form__field--right
+      = f.collection_check_boxes :user_ids, User.where.not(id: current_user.id), :id, :name
+      = hidden_field_tag "group[user_ids][]", current_user.id
+  .chat-group-form__field.clearfix
+    .chat-group-form__field--left
+      = f.label "チャットメンバー", class: "chat-group-form__label"
+
+  .chat-group-form__field.clearfix
+    .chat-group-form__field--left
+    .chat-group-form__field--right
+      = f.submit 'SAVE', class: "chat-group-form__action-btn"
