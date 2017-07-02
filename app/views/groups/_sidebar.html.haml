@@ -1,0 +1,10 @@
+.content__left
+  .content__left__top
+    = link_to edit_user_registration_path do
+      %i.fa.fa-gear.fa-lg
+    = link_to new_group_path do
+      %i.fa.fa-edit.fa-lg
+    %p= current_user.name
+  .content__left__under
+    = render @groups
+

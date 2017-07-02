@@ -1,0 +1,23 @@
+.content
+  = render 'groups/sidebar'
+  .content__right
+    .content__right__top
+      .content__right__top--left
+        %p= @group.name
+        .member Member：
+        .members
+          - @group.users.each do |user|
+            = user.name
+      .content__right__top--edit-btn
+        = link_to "EDIT", edit_group_path(@group), class: "square_btn"
+    .content__right__under
+      .content__right__under__message
+        %span seo　timestamp
+        %p こんにちわ
+    .content__right__under--send-btn
+      = form_for [@group, @message] do |f|
+        = f.text_field :body, placeholder: "type a message", class: "message_form"
+        = f.label :image do
+          %i.fa.fa-image
+        = f.file_field :image, class: "fileInput", style: "display:none;"
+        = f.submit value: "SEND" , class: "square_btn"

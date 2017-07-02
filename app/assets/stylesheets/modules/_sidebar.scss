@@ -1,0 +1,42 @@
+.content__left {
+  float: left;
+  &__top {
+    background-color: #00008B;
+    width: 300px;
+    height: 90px;
+    i {
+      color: white;
+      line-height: 90px;
+      float: right;
+      padding: 0 15px 0 0;
+    }
+    p {
+      line-height: 90px;
+      float: left;
+      padding: 0 0 0 15px;
+      color: white;
+      font-weight: bold;
+    }
+  }
+  &__under {
+    background-color: #2f3e51;
+    min-height: 890px;
+    max-height: 890px;
+    width: 300px;
+    overflow: auto;
+    .group-link {
+      text-decoration: none;
+    }
+      p {
+        color: white;
+        font-size: 15px;
+        padding: 35px 0 5px 20px;
+      }
+      span {
+        color: white;
+        font-size: 11px;
+        padding-left: 20px;
+      }
+  }
+}
+
