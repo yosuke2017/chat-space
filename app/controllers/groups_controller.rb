@@ -1,12 +1,12 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
+
   def index
     @groups = current_user.groups
   end
 
   def new
    @group = Group.new
-   @user = User.new
   end
 
   def create
@@ -14,7 +14,6 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to group_messages_path(@group), notice: "グループを作成しました"
     else
-      flash.now[:alert] = "グループ名を入力してください"
       render :new
     end
   end

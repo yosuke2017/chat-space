@@ -24,6 +24,8 @@ gem 'font-awesome-rails'
 
 gem 'devise'
 
+gem 'rails-i18n'
+
 
 group :development, :test do
 
