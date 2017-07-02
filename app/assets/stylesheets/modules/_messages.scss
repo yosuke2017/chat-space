@@ -13,9 +13,17 @@
           font-size: 20px;
           color: #333333;
         }
-        pre {
+        .member{
           font-size: 12px;
           color: #999999;
+          display:inline-block;
+          vertical-align: middle;
+        }
+        .members {
+          font-size: 12px;
+          color: #999999;
+          display:inline-block;
+          vertical-align: middle;
         }
       }
       &--edit-btn {
