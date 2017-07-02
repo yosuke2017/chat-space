@@ -9,8 +9,13 @@ class GroupsController < ApplicationController
   end
 
   def create
-    Group.create(create_params)
-    redirect_to root_path
+    @group = Group.new(create_params)
+    if @group.save
+      redirect_to root_path, notice: "グループを作成しました"
+    else
+      flash.now[:alert] = "グループ名を入力してください"
+      render :new
+    end
   end
 
   def edit
@@ -20,7 +25,7 @@ class GroupsController < ApplicationController
   def update
     @group = Group.find(params[:id])
     @group.update(update_params)
-    redirect_to root_path
+    redirect_to root_path, notice: "グループを編集しました"
   end
 
   private
@@ -32,3 +37,4 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name,user_ids: [])
   end
 end
+
