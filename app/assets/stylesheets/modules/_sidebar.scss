@@ -1,4 +1,5 @@
 .content__left {
+  height: 100%;
   float: left;
   &__top {
     background-color: #00008B;
@@ -33,10 +34,17 @@
         padding: 35px 0 5px 20px;
       }
       span {
-        color: white;
+        color: #FFDAB9;
         font-size: 11px;
         padding-left: 20px;
+        // &:after{
+        //   height: calc(100% - 980px);
+        // }
       }
+
   }
+//   &__space {
+//     height: calc(100% - 980px);
+//   }
 }
 
