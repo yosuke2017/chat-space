@@ -9,7 +9,7 @@
           - @group.users.each do |user|
             = user.name
       .content__right__top--edit-btn
-        = link_to "EDIT", edit_group_path(@group), class: "square_btn"
+        = link_to "GROUP EDIT", edit_group_path(@group), class: "square_btn"
     .content__right__under
       .content__right__under__message
         = render 'messages/body-image'
