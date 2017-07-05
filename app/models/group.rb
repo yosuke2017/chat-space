@@ -7,14 +7,17 @@ class Group < ApplicationRecord
 
   def last_message
    @message = Message.where(group_id: self.id).order('created_at DESC').limit(1)
-   if @message.present?
-     @message.each do |message|
-       return message.body
-     end
-   else
+   if @message.empty?
      return "まだメッセージはありません"
+   elsif @message.present?
+     @message.each do |message|
+       if message.body.present?
+         return message.body
+       elsif message.body.empty?
+         return "画像が送信されました"
+       end
+     end
    end
   end
-
 end
 
