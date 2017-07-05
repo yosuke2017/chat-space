@@ -54,14 +54,21 @@
           vertical-align: middle;
           padding: 2px 0 0 5px;
         }
-        p {
+        .body {
           font-size: 14px;
           color: $content;
           padding: 10px 0 40px 0;
         }
         .image{
-
-
+          padding: 5px 0 40px 0;
+        }
+        .else-body{
+          font-size: 14px;
+          color: $content;
+          padding: 10px 0 5px 0;
+        }
+        .else-image{
+          padding-bottom: 40px;
         }
       }
       &--send-btn {

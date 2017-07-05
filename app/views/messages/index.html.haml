@@ -12,16 +12,7 @@
         = link_to "EDIT", edit_group_path(@group), class: "square_btn"
     .content__right__under
       .content__right__under__message
-        - @messages.each do |message|
-          .name
-            = message.user.name
-          .time
-            = message.created_at.strftime("%Y/%m/%d %H:%M")
-          %p= message.body
-          - if message.image.present?
-            .image
-              = image_tag message.image
-
+        = render 'messages/body-image'
     .content__right__under--send-btn
       = form_for [@group,@message] do |f|
         = f.text_field :body, placeholder: "type a message", class: "message_form"
@@ -29,3 +20,4 @@
           %i.fa.fa-image
         = f.file_field :image, class: "fileInput", style: "display:none;"
         = f.submit value: "SEND" , class: "square_btn"
+
