@@ -72,19 +72,18 @@
         }
       }
       &--send-btn {
-        // height: calc(100% - 880px);
         background-color: $send;
         padding: 20px 0 16px 20px;
         .message_form {
           width: calc(100% - 200px);
           height: 60px;
           padding: 0 40px 0 20px;
-          border-left: solid $send 50p;
+          position: relative;
         }
         .fa-image {
           padding: 20px 0px 0px 10px;
-          position: relative;
-          right: 40px;
+          position: absolute;
+          right: 160px;
         }
         @include square-btn();
      }
