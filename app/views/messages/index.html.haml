@@ -12,7 +12,7 @@
         = link_to "GROUP EDIT", edit_group_path(@group), class: "square_btn"
     .content__right__under
       .content__right__under__message
-        = render 'messages/body-image'
+        = render @messages
     .content__right__under--send-btn
       = form_for [@group,@message] do |f|
         = f.text_field :body, placeholder: "type a message", class: "message_form"

@@ -1,0 +1,9 @@
+.content__right__under__message__name-time
+  .name
+    = message.user.name
+  .time
+    = message.created_at.strftime("%Y/%m/%d %H:%M")
+.content__right__under__message__content
+  = content_tag :div, message.body, class: "content__right__under__message__content-text" if message.body.present?
+  = image_tag message.image, class: "content__right__under__message__content-image" if message.image.present?
+

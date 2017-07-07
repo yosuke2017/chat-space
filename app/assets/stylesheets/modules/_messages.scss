@@ -40,35 +40,30 @@
       overflow: auto;
       &__message {
         padding: 46px 0 10px 40px;
-        .name {
-          font-size: 16px;
-          font-weight: bold;
-          color: $content;
-          display:inline-block;
-          vertical-align: middle;
+        &__name-time{
+          .name {
+            font-size: 16px;
+            font-weight: bold;
+            color: $content;
+            display:inline-block;
+            vertical-align: middle;
+          }
+          .time{
+            font-size: 12px;
+            color: #999999;
+            display:inline-block;
+            vertical-align: middle;
+            padding: 2px 0 0 5px;
+          }
         }
-        .time{
-          font-size: 12px;
-          color: #999999;
-          display:inline-block;
-          vertical-align: middle;
-          padding: 2px 0 0 5px;
-        }
-        .body {
-          font-size: 14px;
-          color: $content;
+        &__content{
           padding: 10px 0 40px 0;
-        }
-        .image{
-          padding: 5px 0 40px 0;
-        }
-        .else-body{
-          font-size: 14px;
-          color: $content;
-          padding: 10px 0 5px 0;
-        }
-        .else-image{
-          padding-bottom: 40px;
+          &-text {
+            font-size: 14px;
+            color: $content;
+          }
+          &-image{
+          }
         }
       }
       &--send-btn {
