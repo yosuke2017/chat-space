@@ -1,4 +1,5 @@
 .content__left {
+  height: 100%;
   float: left;
   &__top {
     background-color: #00008B;
@@ -34,6 +35,7 @@
       }
       span {
         color: white;
+        color: #FFDAB9;
         font-size: 11px;
         padding-left: 20px;
       }
