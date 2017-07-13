@@ -1,6 +1,4 @@
-class UsersController < ApplicationController
-  def edit
-  end
+class UsersController < Devise::RegistrationsController
 
   def update
    current_user.update(update_params)
