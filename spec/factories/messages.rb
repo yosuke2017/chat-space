@@ -7,8 +7,8 @@ FactoryGirl.define do
        ActionDispatch::Http::UploadedFile.new(
          :tempfile => File.new(Rails.root.join("spec/fixtures/files/test.png")),
          :filename => File.basename(File.new(Rails.root.join("spec/fixtures/files/test.png")))
-    )
-  }
+      )
+    }
   end
 end
 
