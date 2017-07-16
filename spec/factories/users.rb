@@ -1,3 +1,4 @@
+
 FactoryGirl.define do
   pass = Faker::Internet.password(8)
 
@@ -8,4 +9,3 @@ FactoryGirl.define do
     password_confirmation pass
   end
 end
-

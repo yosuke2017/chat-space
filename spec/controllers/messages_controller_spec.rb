@@ -2,11 +2,12 @@ require 'rails_helper'
 
 RSpec.describe MessagesController, type: :controller do
 
-  let(:user) { create(:user) }
-  let(:message) { create(:message) }
-  let(:messages) { create_list(:message, 3)}
-  let(:group) { create(:group) }
-  let(:set_group) { get :index, params: { group_id: group.id } }
+  let(:user)               { create(:user) }
+  let(:message)            { create(:message) }
+  let(:messages)           { create_list(:message, 3)}
+  let(:group)              { create(:group) }
+  let(:set_group)          { get :index, params: { group_id: group.id } }
+  let(:re_direct_sign_in)  { expect(response).to redirect_to new_user_session_url }
 
     describe "GET #index" do
 
@@ -41,7 +42,7 @@ RSpec.describe MessagesController, type: :controller do
           set_group
         }
          it "該当するビューに遷移できているか" do
-           expect(response).to redirect_to new_user_session_url
+           re_direct_sign_in
            expect(flash[:alert]).to include "ログインまたは登録が必要です"
          end
       end
@@ -94,7 +95,7 @@ RSpec.describe MessagesController, type: :controller do
         end
 
         it "意図した画面にリダイレクトできているか" do
-          expect(response).to redirect_to new_user_session_url
+          re_direct_sign_in
           expect(flash[:alert]).to include "ログインまたは登録が必要です"
         end
       end
