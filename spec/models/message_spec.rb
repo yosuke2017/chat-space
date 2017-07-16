@@ -31,7 +31,9 @@ describe Message do
       expect(message.errors[:group_id]).to include("を入力してください")
     end
 
-    it "is invalid without group_id" do
+    it "is invalid without user_id" do
+      # user = create(:user)
+      # group = create(:group)
       message = build(:message, user_id: "")
       message.valid?
       expect(message.errors[:user_id]).to include("を入力してください")
