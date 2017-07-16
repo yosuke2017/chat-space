@@ -28,6 +28,7 @@ class GroupsController < ApplicationController
       flash.now[:alert] = "グループ名を入力してください"
       render :edit
     end
+
   end
 
   private
@@ -41,4 +42,5 @@ class GroupsController < ApplicationController
     end
 
 end
+
 
