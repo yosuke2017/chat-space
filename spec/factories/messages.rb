@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :message do
     body {Faker::Lorem.sentence}
-    user_id {Faker::Number.number(1)}
-    group_id {Faker::Avatar.image}
+    user
+    group
     image {
        ActionDispatch::Http::UploadedFile.new(
          :tempfile => File.new(Rails.root.join("spec/fixtures/files/test.png")),

@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'spec_helper'
 
 describe Message do
   describe '#create' do
@@ -32,8 +31,6 @@ describe Message do
     end
 
     it "is invalid without user_id" do
-      # user = create(:user)
-      # group = create(:group)
       message = build(:message, user_id: "")
       message.valid?
       expect(message.errors[:user_id]).to include("を入力してください")
@@ -41,5 +38,4 @@ describe Message do
 
   end
 end
-
 
