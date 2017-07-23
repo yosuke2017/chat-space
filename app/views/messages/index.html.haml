@@ -11,10 +11,10 @@
       .content__right__top--edit-btn
         = link_to "EDIT", edit_group_path(@group), class: "square_btn"
     .content__right__under
-      .content__right__under__message
+      .content__right__under__message{id: "message_area"}
         = render @messages
     .content__right__under--send-btn
-      = form_for [@group,@message] do |f|
+      = form_for [@group,@message], html: { id: 'form' } do |f|
         = f.text_field :body, placeholder: "type a message", class: "message_form"
         = f.label :image do
           %i.fa.fa-image

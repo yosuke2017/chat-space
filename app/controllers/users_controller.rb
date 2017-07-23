@@ -1,5 +1,9 @@
 class UsersController < Devise::RegistrationsController
 
+  def index
+
+  end
+
   def update
    current_user.update(update_params)
   end
