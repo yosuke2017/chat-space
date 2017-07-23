@@ -1,12 +1,12 @@
 class MessagesController < ApplicationController
  before_action :set_message_group
 
- def index
-  @message = Message.new
- end
+  def index
+    @message = Message.new
+  end
 
- def create
-  @message = Message.new(message_params)
+  def create
+    @message = Message.new(message_params)
     if @message.save
       respond_to do |format|
         format.html { redirect_to group_messages_path(@group), notice: "メッセージを送信しました" }
@@ -16,9 +16,9 @@ class MessagesController < ApplicationController
       flash.now[:alert] = "メッセージを入力してください"
       render :index
     end
- end
+  end
 
- private
+  private
 
   def message_params
    params.require(:message).permit(:body, :image).merge(user_id: current_user.id, group_id: params[:group_id])

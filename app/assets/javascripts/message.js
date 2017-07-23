@@ -3,8 +3,7 @@ $(function(){
     e.preventDefault();
     var $this = $(this);
     var formData = new FormData(this);
-    console.log(formData);
-    var $text = $(this).find('.message_form').val();
+    var $text = $this.find('.message_form').val();
     var $text_field = $(this).find('.message_form');
     $text_field.val('');
     $.ajax({
