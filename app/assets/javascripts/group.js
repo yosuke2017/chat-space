@@ -12,7 +12,7 @@ $(function() {
         $('#chat-group-user-search').remove();
         $.each(users, function(index, user){
           $('#chat-member').append(appendUser(user));
-            if (input === ""){
+          if (input === ""){
             $('#chat-group-user-search').remove();
             return;
           }
@@ -38,31 +38,30 @@ $(function() {
     $(this).parent().remove();
      array.unshift($name);
   });
+
   $(document).on("click", "#delete", function(){
     var $name = $(this).data("user-name");
     $(this).parent().remove();
-    console.log(array);
     array.splice($name, 1);
-    console.log(array);
   });
 
-function addUser(id, name){
-  var html =    ` <div class='chat-group-user clearfix' id='chat-group-user-add'>
-                    <input name='group[user_ids][]' type='hidden' value='${id}'>
-                  　<p class='chat-group-user__name'>${name}</p>
-                  　<a class='user-search-add chat-group-user__btn chat-group-user__btn--add' id="delete" data-user-id="${id}" data-user-name="${name}">削除</a>
+  function addUser(id, name){
+    var html =    ` <div class='chat-group-user clearfix' id='chat-group-user-add'>
+                      <input name='group[user_ids][]' type='hidden' value='${id}'>
+                    　<p class='chat-group-user__name'>${name}</p>
+                    　<a class='user-search-add chat-group-user__btn chat-group-user__btn--add' id="delete" data-user-id="${id}" data-user-name="${name}">削除</a>
+                    </div>`
+    return html;
+  }
+
+  function appendUser(user) {
+   　var html =   ` <div class='chat-group-user clearfix' id='chat-group-user-search'>
+                    <input name='chat_group[user_ids][]' type='hidden' value='${user.id}'>
+                    <p class='chat-group-user__name'>${user.name}</p>
+                    <a class='user-search-add chat-group-user__btn chat-group-user__btn--add' id="add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
                   </div>`
-  return html;
-}
+    return html;
+  }
 
-
-function appendUser(user) {
- 　var html =   ` <div class='chat-group-user clearfix' id='chat-group-user-search'>
-                  <input name='chat_group[user_ids][]' type='hidden' value='${user.id}'>
-                  <p class='chat-group-user__name'>${user.name}</p>
-                  <a class='user-search-add chat-group-user__btn chat-group-user__btn--add' id="add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
-                </div>`
-  return html;
-}
 });
 
