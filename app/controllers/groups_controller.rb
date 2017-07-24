@@ -18,9 +18,6 @@ class GroupsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
     if @group.update(group_params)
       redirect_to group_messages_path(@group), notice: "グループを編集しました"
@@ -28,7 +25,14 @@ class GroupsController < ApplicationController
       flash.now[:alert] = "グループ名を入力してください"
       render :edit
     end
+  end
 
+  def search
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user.id).uniq.limit(20)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   private
@@ -42,5 +46,4 @@ class GroupsController < ApplicationController
     end
 
 end
-
 
