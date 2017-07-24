@@ -11,13 +11,14 @@
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
       = f.label "チャットメンバーを追加", class: "chat-group-form__label"
-    .chat-group-form__field--right
-      = f.collection_check_boxes :user_ids, User.where.not(id: current_user.id), :id, :name
+    .chat-group-form__field--right{id: "chat-member"}
+      %input{class: "chat-group-form__input", id: "user-search-field", placeholder: "追加したいユーザー名を入力してください", type: "text"}
       = hidden_field_tag "group[user_ids][]", current_user.id
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
       = f.label "チャットメンバー", class: "chat-group-form__label"
+    .chat-group-form__field--right.chat-group-form__field--right--member
   .chat-group-form__field.clearfix
-    .chat-group-form__field--left
     .chat-group-form__field--right
       = f.submit 'SAVE', class: "chat-group-form__action-btn"
+

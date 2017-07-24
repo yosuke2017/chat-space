@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   $('#form').on("submit", function(e){
     e.preventDefault();
     var $this = $(this);
@@ -44,4 +44,3 @@ $(function(){
       return html;
   }
 });
-
