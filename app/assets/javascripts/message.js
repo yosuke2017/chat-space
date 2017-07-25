@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+$(function(){
   $('#form').on("submit", function(e){
     e.preventDefault();
     var $this = $(this);
@@ -43,4 +43,25 @@ $(document).on('turbolinks:load', function(){
                   `
       return html;
   }
+
+
+
+    setInterval(function(){
+        $.ajax({
+          type: 'GET',
+          url: 'messages',
+          dataType: 'json',
+        })
+        .done(function(data){
+          data.messages.forEach(function(e){
+            console.log(e);
+            renderMessageHTML(e);
+          })
+        })
+        .fail(function(data){
+        });
+    }, 5000);
+
+
+
 });
