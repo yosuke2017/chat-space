@@ -37,17 +37,15 @@ $(function() {
     $('.chat-group-form__field--right--member').append(addUser($id, $name));
     $(this).parent().remove();
      array.push($name);
-     console.log(array);
   });
 
   $(document).on("click", "#delete", function(){
-    var $nam = $(this).parent().find('p').text();
-        console.log($nam);
+    var $name = $(this).parent().find('p').text();
     $(this).parent().remove();
-    var idx = array.indexOf($nam);
+    var idx = array.indexOf($name);
     if(idx >= 0){
       array.splice(idx, 1);
-      console.log(array);
+
     }
   });
 

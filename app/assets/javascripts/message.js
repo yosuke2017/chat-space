@@ -35,7 +35,7 @@ $(function(){
                     ${message.created_time}
                   </div>
                 </div>
-                <div class="content__right__under__message__content">
+                <div class="content__right__under__message__content" data-message-id="${message.id}" >
                   <div class="content__right__under__message__content-text">${message.body}
                   </div>
                    ${message_image}
@@ -44,24 +44,29 @@ $(function(){
       return html;
   }
 
+  function autoScroll(){
+    $('.content__right__under').animate({
+      scrollTop: $('.content__right__under')[0].scrollHeight}, 4000);
+  }
 
+  setInterval(function(){
+    var $messages = $(".content__right__under__message__content").last();
+    var id = $messages.data("message-id");
+    $.ajax({
+      type: 'GET',
+      url: window.location.href,
+      dataType: 'json',
+    })
+    .done(function(data){
+     $.each(data, function(index, message){
+       if(message.id > id ){
+        $('#message_area').append(renderMessageHTML(message));
+        autoScroll();
+       }
+     });
+    }).fail(function(data){
+      alert("エラー");
+    })
 
-    setInterval(function(){
-        $.ajax({
-          type: 'GET',
-          url: 'messages',
-          dataType: 'json',
-        })
-        .done(function(data){
-          data.messages.forEach(function(e){
-            console.log(e);
-            renderMessageHTML(e);
-          })
-        })
-        .fail(function(data){
-        });
-    }, 5000);
-
-
-
+  }, 5000);
 });
