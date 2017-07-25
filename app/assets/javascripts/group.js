@@ -36,13 +36,17 @@ $(function() {
     }
     $('.chat-group-form__field--right--member').append(addUser($id, $name));
     $(this).parent().remove();
-     array.unshift($name);
+     array.push($name);
   });
 
   $(document).on("click", "#delete", function(){
-    var $name = $(this).data("user-name");
+    var $name = $(this).parent().find('p').text();
     $(this).parent().remove();
-    array.splice($name, 1);
+    var idx = array.indexOf($name);
+    if(idx >= 0){
+      array.splice(idx, 1);
+
+    }
   });
 
   function addUser(id, name){
