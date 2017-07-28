@@ -54,9 +54,7 @@ $(function() {
             + '<p class="chat-group-user__name">'
             + name
             +'</p>'
-            +'<a class="user-search-add chat-group-user__btn chat-group-user__btn--add" id="delete" data-user-id="' + id + '" data-user-name="' + name + '">'
-            + 削除
-            + '</a>'
+            +'<a class="user-search-add chat-group-user__btn chat-group-user__btn--add" id="delete" data-user-id="' + id + '" data-user-name="' + name + '">削除</a>'
             + '</div>';
     return html;
   }
