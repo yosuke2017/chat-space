@@ -25,23 +25,23 @@ $(function(){
   });
 
   function renderMessageHTML(message){
-     var message_image = message.image ? `<image src="${message.image}">` : "";
+     var message_image = message.image ? '<image src="${message.image}">': "";
 
-        var html = `<div class="content__right__under__message__header">
-                  <div class="content__right__under__message__header__name">
-                    ${message.user_name}
-                  </div>
-                  <div class="content__right__under__message__header__time">
-                    ${message.created_time}
-                  </div>
-                </div>
-                <div class="content__right__under__message__content" data-message-id="${message.id}" >
-                  <div class="content__right__under__message__content-text">${message.body}
-                  </div>
-                   ${message_image}
-                </div>
-                  `
-      return html;
+        var html = '<div class="content__right__under__message__header">'
+                 +'<div class="content__right__under__message__header__name">'
+                 +'${message.user_name}'
+                 +'</div>'
+                 +'<div class="content__right__under__message__header__time">'
+                 +'${message.created_time}'
+                 +'</div>'
+                 +'</div>'
+                 +'<div class="content__right__under__message__content" data-message-id="${message.id}" >'
+                 +'<div class="content__right__under__message__content-text">'
+                 +'${message.body}'
+                 +'</div>'
+                 +'${message_image}'
+                 +'</div>';
+                  return html;
   }
 
   function autoScroll(){
