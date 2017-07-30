@@ -63,6 +63,7 @@ $(function(){
     .done(function(data){
      $.each(data, function(index, message){
        if(message.id > id ){
+        console.log("success")
         $('#message_area').append(renderMessageHTML(message));
         autoScroll();
        }

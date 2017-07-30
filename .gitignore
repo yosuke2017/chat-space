@@ -16,3 +16,5 @@
 vendor/bundle/*
 
 /public/uploads/tmp
+
+/config/secrets.yml
