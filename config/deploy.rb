@@ -18,6 +18,8 @@ set :keep_releases, 5
 
 set :log_level, :debug
 
+set :linked_files, %w{ config/secrets.yml }
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do

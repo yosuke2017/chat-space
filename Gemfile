@@ -28,6 +28,8 @@ gem 'carrierwave', '~> 1.0'
 
 gem 'mini_magick'
 
+gem 'fog'
+
 group :development, :test do
 
   gem 'capistrano'

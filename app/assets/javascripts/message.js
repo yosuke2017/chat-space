@@ -14,10 +14,13 @@ $(function(){
       processData: false,
       contentType: false
     }).done(function(data){
+      if(data.body === undefined && data.image === undefined){
+          return;
+        }
       $('#message_area').append(renderMessageHTML(data));
       $('.content__right__under').animate({
         scrollTop: $('.content__right__under')[0].scrollHeight}, 'fast');
-    }).fail(function(data){
+    }).fail(function(){
       alert('メッセージを入力してください');
     });
     this.reset();
@@ -25,6 +28,7 @@ $(function(){
   });
 
   function renderMessageHTML(message){
+    console.log(message.body)
      var message_image = message.image ? '<image src= "' + message.image + '" >': "";
 
         var html = '<div class="content__right__under__message__header">'
@@ -50,11 +54,12 @@ $(function(){
   }
 
   setInterval(function(){
-    if (window.location.href.indexOf("message") === -1){
+    if(window.location.href.indexOf("message") === -1){
       return;
     }
     var $messages = $(".content__right__under__message__content").last();
     var id = $messages.data("message-id");
+    console.log(id)
     $.ajax({
       type: 'GET',
       url: window.location.href,
@@ -62,7 +67,8 @@ $(function(){
     })
     .done(function(data){
      $.each(data, function(index, message){
-       if(message.id > id ){
+       if(message.id > id){
+        console.log("sss");
         $('#message_area').append(renderMessageHTML(message));
         autoScroll();
        }
@@ -71,5 +77,5 @@ $(function(){
       alert("エラー");
     })
 
-  }, 5000);
+  }, 4000);
 });
